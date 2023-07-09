@@ -56,12 +56,13 @@ content_dic = {
         "titre": "Fanorona",
         "decription" : "Karazana lalao izay ahitanao fanotaniaina mahafinaritra isankarazany . Raha tia fifaninanana ianao dia afaka ifaninananao amin'ny namano ihany koa io ka izay be lanjan'isa ny mandresy eh !",
         "image" : "fanorona.webp",
-        "lien" : "",
+        "lien" : "https://athanase25537.github.io",
     },
     "2" : {
         "titre" : "Sudoku",
         "decription" : "Ny sudoku dia kilalao hampiharanareo an'ilay fandahana isa ohatra ny any ampianarana. Ataovy misy isa manomboka amn'ny 01 ka hatr'amin'ny 09 fotsiny ilay izy dia viaaa...",
-        "image" : "sudoku.webp"
+        "image" : "sudoku.webp",
+        "lien" : "https://gosudoku.netlify.app"
     }
     
 }
