@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tia zaza</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./loader.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/loader.css">
+    <link rel="stylesheet" href="./css/animation.css">
 
     <link rel="stylesheet" href="./ico/all.min.css">
     <link rel="stylesheet" href="./ico/fontawesome.min.css">
@@ -14,7 +15,7 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body>
-    <div id="loader-contain" class="hidden">
+    <div id="loader-contain" class="">
         <div class="loading">
             <span></span>
         </div>
@@ -26,13 +27,15 @@
         <div class="side-contain">
             <div class="side-bars">
                 <div class="mode">
+                    <i class="fa-sharp fa-solid fa-moon hidde"></i>
+                    <i class="fa-solid fa-sun fa-spin"></i>
                     <!-- <p>night</p> -->
                 </div>
                 <div class="menu">
                     <a href="#" class="active"> <i class="fa-solid fa-home"></i> </a>
                     <a href="#"> <i class="fa-solid fa-user"></i> </a>
-                    <a href="#"> <i class="fa-solid fa-home"></i> </a>
-                    <a href="#"> <i class="fa-solid fa-home"></i> </a>
+                    <a href="mailto:krandy018@gmail.com"> <i class="fa-solid fa-phone"></i> </a>
+                    <a href="#"> <i class="fa-solid fa-heart"></i> </a>
 
                 </div>
             </div>
@@ -55,26 +58,45 @@
                     <p>Mandray anao ny</p>
                     <h1>Tia zaza</h1>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                         Magni voluptatem, possimus recusandae nihil odio perspiciatis! Odit culpa harum repudiandae.
-                          Iste, dolorem mollitia? Quae nihil vitae reiciendis tempora corrupti nulla et velit ducimus
-                           hic fugiat. Voluptates cum eius aut deserunt impedit nihil nisi accusantium placeat! Error,
-                            architecto porro illo minima, totam recusandae odit asperiores est dolores saepe cupiditate
-                             nesciunt aspernatur! Deleniti.
+                        Tongasoa ato amin'ny Tia zaza.Ny tia zaza dia tranokala vita malagasy izao nofenoina karazana lalao izay natao mba hampialavoly ny ankizy mandritra 
+                        izao fotoana fialantsatsatra izao. Ato ireo ankizy dia sady afaka milalao no mampitombo fahalalana ihany koa amin'ny alala'ireo
+                        'Jeu de culture'
                     </p>
+                    <div class="btn-contain">
+                        <button class="start">
+                            <i class="fa-solid fa-gamepad"></i> <a href=""> Ndao hilalao </a>
+                        </button>
+                    </div>
+                    
                 </div>
             </div>
             <div class="list-contain hidden">
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
+                <div class="box" id="0">
+                    <img src="./images/fanorona.webp" alt="" id="0">
+                    <div class="titre-game">
+                        <p>fanorona</p>
+                    </div>
+                </div>
+                <div class="box" id="1">
+                    <img src="./images/ankamanatatra.png" alt="" id="1">
+                    <div class="titre-game">
+                        <p>Ankamantatra</p>
+                    </div>
+                </div>
+                <div class="box" id="2">
+                    <img src="./images/sudoku.webp" alt="" id="2">
+                    <div class="titre-game">
+                        <p>Sudoku</p>
+                    </div>
+                </div>
+                <!-- <div class="box" id="3"></div>
+                <div class="box" id="4"></div> -->
 
             </div>
         </div>
     </div>
 
-    <script src="./index.js"></script>
+    <script src="./js/index.js"></script>
+    <!-- <script src="./chargeImage.js"></script> -->
 </body>
 </html>

@@ -3,19 +3,24 @@
     --bg-contain : linear-gradient(to bottom right, rgb(43, 43, 61), rgb(1, 1, 21));
     --packman : #ff9f39;
 
+    --primary : linear-gradient(to bottom right, #0051ff, #2a09be);
+    --borderColor : #5c5c5c;
+
     --text : #fff;
     --text2 : #aaaaaa;
 }
 @font-face {
     font-family: debug;
-    src: url("./ModernWarfare-OV7KP.ttf");
+    src: url("../ModernWarfare-OV7KP.ttf");
 }
 *,body{
     margin : 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    transition: .4s;
 }
+
 /* body{
     width : 100%;
     height: 100vh;
@@ -45,7 +50,7 @@
     width : 60px;
     background: #ffffff11;
     border-radius: 10px;
-    border: 1px solid #424242;
+    border: 1px solid var(--borderColor);
     backdrop-filter: blur(5px);
 }
 #container .side-contain .side-bars{
@@ -58,7 +63,23 @@
     height: 100%;
 }
 #container .side-contain .side-bars .mode{
+    position: absolute;
+    top : 4%;
     margin-bottom: 50%;
+}
+#container .side-contain .side-bars .mode i{
+    font-weight: bold;
+    font-size: 1.4em;
+    cursor: pointer;
+}
+#container .side-contain .side-bars .mode i:nth-child(1){
+    color : rgb(40, 30, 232);
+}
+#container .side-contain .side-bars .mode i:nth-child(2){
+    color : rgb(242, 255, 0)
+}
+#container .side-contain .side-bars .mode i.hidde{
+    display: none;
 }
 #container .side-contain .side-bars .menu{
     display: flex;
@@ -70,7 +91,7 @@
     color : var(--text);
 }
 
-#container .side-contain .side-bars .menu a.active::before, #container .side-contain .side-bars .menu a:hover::before{
+#container .side-contain .side-bars .menu a::before{
     content: "";
     position: absolute;
     left : -50%;
@@ -80,8 +101,12 @@
     border-radius: 20px;
     background: var(--text);
     filter: blur(10px);
-    opacity: .1;
+    opacity: 0;
     z-index: -1;
+    transition: .4s;
+}
+#container .side-contain .side-bars .menu a.active::before, #container .side-contain .side-bars .menu a:hover::before{
+    opacity: .1;
 }
 #container .side-contain .side-bars .menu a.active::after{
     content: "";
@@ -118,6 +143,7 @@
     letter-spacing: 5px;
 }
 #container .all-data .body-contain header .option{
+    display: none;
     position: relative;
 }
 #container .all-data .body-contain header .option img{
@@ -166,6 +192,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    overflow-wrap: break-word;
     width : 55%;
 }
 #container .all-data .body-contain .text h1, #container .all-data .body-contain .text p:nth-child(1){
@@ -176,10 +203,41 @@
     font-family: debug;
     font-size: 5em;
     text-transform: uppercase;
+    animation: enterTitre 1.2s;
 }
+
 #container .all-data .body-contain .text p:nth-child(3){
     margin-top: 5%;
     color : var(--text2);
+    animation: enterParagraphe 1.6s;
+}
+#container .all-data .body-contain .text button{
+    font-weight: bold;
+    margin: 8% 0;
+    padding : 10px 14px;
+    border: none;
+    color : var(--text);
+    border-radius: 5px;
+    background: var(--primary);
+    box-shadow: 2px 10px 15px rgba(4, 0, 225, 0);
+    transition: .3s;
+}
+#container .all-data .body-contain .text button a{
+    text-decoration: none;
+    color : var(--text);
+}
+#container .all-data .body-contain .text button i{
+    margin-right: 10px;
+    transform: scale(.8);
+    animation: enterMode .6s;
+    transition: .4s;
+}
+#container .all-data .body-contain .text button:hover{
+    box-shadow: 2px 10px 15px rgba(4, 0, 225, 0.4);
+    transform: scale(1.02);
+}
+#container .all-data .body-contain .text button:hover i{
+    transform: rotate(-30deg) scale(1.04);
 }
 #container .all-data .list-contain{
     display: flex;
@@ -195,10 +253,12 @@
     width: 0;
 }
 #container .all-data .list-contain .box{
+    position: relative;
     flex-shrink: 0;
     width : 70%;
     height : 30%;
-    background: rgb(114, 109, 109);
+    background: rgba(114, 109, 109, 0.185);
+    backdrop-filter: blur(3px);
     border-radius: 5px;
     cursor: pointer;
     transition: .4s;
@@ -212,10 +272,27 @@
     height: 100%;
     object-fit: cover;
 }
-
+#container .all-data .list-contain .box .titre-game{
+    position: absolute;
+    left : 0;
+    bottom : 0;
+    width: 100%;
+    height: 40px;
+    border-radius: 15px 15px 0 0 ;
+    background: var(--primary);
+}
+#container .all-data .list-contain .box .titre-game p{
+    font-weight: bold;
+    margin-top: 5%;
+    text-align: center;
+    color : var(--text);
+}
 /* cote responsivite du projet  */
 
 @media (max-width : 850px){
+    #container .all-data .body-contain header .option{
+        display: block;
+    }
     #container .all-data{
         position: relative;
     }
@@ -228,7 +305,7 @@
         top : 8%;
         width: 40%;
         height: 92%;
-        border: 1px solid #828282;
+        border: 1px solid var(--borderColor);
     }
     #container .all-data .list-contain.hidden{
         display: none;
@@ -261,6 +338,44 @@
     }
 }
 @media (max-width : 450px){
+    #container{
+        flex-direction: column-reverse;
+        padding : 0;
+    }
+    #container .side-contain{
+        margin: 0 2%;
+        width : 96%;
+        height: 60px;
+    }
+    #container .side-contain .side-bars{
+        flex-direction: row;
+    }
+    #container .side-contain .side-bars .mode{
+        transform: translate(-50%,-50%);
+        left : 10%;
+        top : 50%;
+    }
+    #container .side-contain .side-bars .menu{
+        flex-direction: row;
+        gap: 20px;
+    }
+    #container .all-data .body-contain header .logo p{
+        margin-top: 7%;
+        letter-spacing: 0;
+    }
+    #container .side-contain .side-bars .menu a.active::after{
+        left: 8px;
+        top : -20px;
+        transform: rotate(90deg);
+    }
+    #container .all-data{
+        margin: 0 2%;
+        width: 96%;
+        height: calc(100% - 70px);
+    }
+    #container .all-data .body-contain{
+        border: none;
+    }
     #container .all-data .body-contain .text h1{
         font-size: 4em;
     }
@@ -268,3 +383,6 @@
         width: 80%;
     }
 }
+
+
+
