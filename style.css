@@ -152,6 +152,11 @@
 #container .all-data .body-contain .images{
     width : 45%;
 }
+#container .all-data .body-contain .images lottie-player{
+    width : 100%;
+    height : 100%;
+    object-fit: contain;
+}
 #container .all-data .body-contain .images img{
     width : 100%;
     height: 100%;
