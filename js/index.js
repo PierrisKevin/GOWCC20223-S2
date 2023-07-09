@@ -115,3 +115,13 @@ heartBeat.addEventListener("click", ()=>{
     changeLike = (changeLike) ? false : true
     heartBeat.classList.toggle('fa-bounce')
 })
+
+//Evenement ajouter a la premier lien
+const lien = document.querySelector("#container .all-data .body-contain .text button a")
+lien.addEventListener("click", (e)=>{
+    console.log(/#vide/.test(String(e.target.href)))
+    if(/#vide/.test(String(e.target.href))){
+        e.preventDefault()
+        changeContent("0")
+    }
+})
